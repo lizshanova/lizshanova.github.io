@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            font-size: 20px;
+            color: white;
+            margin: 0px;
+            text-align: center;
+        }
+        .container-1 {
+            background-color: teal;
+            height: 100%;
+            flex-basis: 20%;
+        }
+        .container-2 {
+            display:flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .inner1 {
+            background-color: brown;
+            height: 20%;
+        }
+        .inner2 {
+            display: flex;
+            flex-basis: 100%;
+            width: 100%; 
+            height: 80%;
+            
+            }
+        .concol1 {
+            display:flex;
+            background-color: darkblue;
+            justify-content: center;
+            align-items: center;
+            }
+        .concol2 {
+            display:flex;
+            background-color: darkgreen;
+            justify-content: center;
+            align-items: center;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-1">Меню</div>
+
+    <div class="container-2">
+        <div class="inner1">Заголовок</div>
+
+        <div class="inner2">
+            <div class="concol1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, asperiores! Quo voluptatum eum architecto et debitis voluptatibus rerum nisi illo, veritatis eligendi maxime natus ullam, vero quis ut ratione ducimus.</div>
+            <div class="concol2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium nulla beatae illum unde reprehenderit pariatur asperiores, voluptatum quo, tempore sint sunt optio tempora? Perspiciatis eligendi repellat soluta ex voluptate nobis!</div>
+        </div>
+    </div>
+</html>
