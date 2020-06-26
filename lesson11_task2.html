@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+        }
+        .container {
+            display: flex;
+            height: 400px;
+            transform: rotate(180deg);
+        }
+        @keyframes pulse {
+            25% {
+                height: 400px;
+                background-color: violet;
+            }
+        }
+        .box:nth-child(1) {
+            animation: pulse 1s .2s ease-in-out infinite;
+        }
+        .box:nth-child(2) {
+            animation: pulse 1s .4s ease-in-out infinite;
+        }
+        .box:nth-child(3) {
+            animation: pulse 1s .6s ease-in-out infinite;
+        }
+                
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
