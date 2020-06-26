@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lavenderblush;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            background-color: darkslateblue;
+            border-radius: 10px;
+            width: 400px;
+            padding: .5em;
+            transition: all ease .3s;
+        }
+        form:hover {
+            box-shadow: 4px 4px 0 0 darkorchid;
+            transform: translate(-7px, -7px);
+        }
+        button {
+            background-color: yellow;
+            border-radius: 5px;
+            height: 40px;
+            width: 395px;
+            margin: 2em;
+            margin-left: 0.25em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input {
+            border-radius: 5px;
+            height: 25px;
+            
+        }
+        h1 {
+            color: whitesmoke;
+            font-size: 1.25em;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: .1em;
+            display: flex;
+            justify-content: center;
+        }
+        h2 {
+            display: flex;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action method="get">
+        <h1>Введите Имя:</h1>
+        <input type="text" name="q" id="">
+        <h1>Ваш email:</h1>
+        <input type="text" name="q" id="">
+        <button type="submit"><h2>Поиск</h2></button>
+    </form>
+</body>
+</html>
