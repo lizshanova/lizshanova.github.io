@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+        }
+        .box {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            color: white;
+            height: 125px;
+            padding-left: .75em;
+            text-align: start;
+        }
+        .box:nth-child(1) {
+            background-color: palevioletred;
+            width: 20vw;
+        }
+        .box:nth-child(2) {
+            background-color: rebeccapurple;
+            width: 60vw;
+        }
+        .box:nth-child(3) {
+            background-color: plum;
+            width: 20vw;
+        }
+        @media (max-width: 800px) {
+        .body {
+        display: block;
+        flex-direction: column;
+        flex-flow: row wrap;
+        }
+        .box {
+            width: 100vw;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="box">Левый элемент</div>
+    <div class="box">Главный элемент</div>
+    <div class="box">Правый элемент</div>
+</body>
+</html>

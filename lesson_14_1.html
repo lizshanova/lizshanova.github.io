@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 300px;
+            margin: 0 1.5em;
+        }
+        .box:nth-child(1) {
+            background-color: brown;
+        }
+        .box:nth-child(2) {
+            background-color: darkorchid;
+        }
+        .box:nth-child(3) {
+            background-color: deepskyblue;
+        }
+        @media (max-width: 1200px) {
+        .box {
+            margin: 1.25em;
+            height: 300px;
+            width: 300px;
+        }
+    }
+@media (max-width: 992px) {
+    .box {
+        flex-direction: column;
+        margin: 1em;
+        height: 300px;
+        width: 300px;
+        flex-flow: row wrap;
+    }
+}
+@media (max-width: 768px) {
+    .box {
+        flex-direction: column;
+        margin: 0 .75em;
+        height: 250px;
+        width: 250px;
+        flex-flow: row wrap;
+    }
+}
+@media (max-width: 500px) {
+    .box {
+        flex-direction: column;
+        margin: 0 .5em;
+        height: 200px;
+        width: 200px;
+        flex-flow: row wrap;
+    }
+}
+@media (max-width: 200px) {
+    .box {
+        flex-direction: column;
+        margin: 0 .25em;
+        height: 200px;
+        width: 200px;
+        flex-flow: row wrap;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>
