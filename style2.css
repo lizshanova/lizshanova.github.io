@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Pacifico', cursive;
+    font-weight: bold;
+}
+.grid-container {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 3.5fr 3fr 6.5fr;
+    grid-template-columns: 6.5fr 10fr 5.5fr;
+    grid-template-areas: 
+    "girl nav nav"
+    "girl text personal"
+    "life text flower";
+}
+.girl {
+    grid-area: girl;
+    background-image: url("./girl.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.life {
+    grid-area: life;
+    background-color: #BE7FAD;
+    color: #807B15;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 30px;
+    padding-top: 45px;
+}
+nav {
+    grid-area: nav;
+    background-color: #3C5100;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.text {
+    grid-area: text;
+    background-color: white;
+    color: #210439;
+    display: flex;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 25px 50px;
+}
+.personal {
+    grid-area: personal;
+    background-color: #BE7FAD;
+    color: #555100;
+    display: flex;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px
+
+}
+.flower {
+    grid-area: flower;
+    background-image: url("./flower.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+h1 {
+    font-family: 'Indie Flower', cursive;
+}
+.left, .right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.left span {
+    font-weight: bold;
+    font-size: 2.5em;
+    margin: 1em;
+}
+.hamburger > div {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+}
