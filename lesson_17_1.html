@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 225vh;
+            overflow-x: hidden;
+        }
+        .top-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            background-color: darkslateblue;
+        }
+        h1 {
+            margin: .5em;
+            align-self: flex-start;
+            font-size: 4em;
+
+        }
+        .pictures {
+            height: 40%;
+            width: 100%;
+            position: relative;
+        }
+        .leftkn {
+            background-image: url('kn_1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position:absolute;
+            background-position-x: left;
+            height: 100%;
+            width: 30%;
+            left: 10%;
+            animation: slidel 0.5s linear;
+           
+        }
+        .rightkn {
+            background-image: url('kn_2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position:absolute;
+            background-position-x: right;
+            height: 100%;
+            width: 30%;
+            right: 10%;
+            animation: slider 0.5s linear;
+        }
+        .button {
+            border: 3px solid white;
+            font-size: 2em;
+            padding: 0.5em;
+            margin: 1em;
+        }
+        .mid-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 2em;
+            font-family: sans-serif, cursive;
+            color: darkslateblue;
+            background-color: white;
+            height: 25vh;
+            padding: 2em;;
+        }
+        .bottom-section {
+            background-image: url('knight.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            height: 200px;
+            width: 500px;
+            background-color: white;
+            padding: 2em;
+            color: dimgray;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h2 {
+            color: darkslateblue;
+            font-family: sans-serif, cursive;
+            font-size: 2em;
+        }
+        @keyframes slidel {
+            0% {
+                opacity: 0;
+                left: -200px;
+            }
+            100% {
+                opacity: 1;
+                left: 10%;
+            }
+        }
+        @keyframes slider {
+            0% {
+                opacity: 0;
+                right: -200px;
+            }
+            100% {
+                opacity: 1;
+                right: 10%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-section">
+        <h1>LITTLE KINGDOM</h1>
+        <div class="pictures">
+            <div class="leftkn">
+
+            </div>
+            <div class="rightkn">
+
+            </div>
+        </div>   
+        <div class="button">DOWNLOAD</div>
+    </div>
+    <div class="mid-section">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vel, debitis incidunt, aliquam expedita dolores mollitia dolorem adipisci est sit ullam?
+    </div>
+    <div class="bottom-section">
+        <div class="container">
+            <h2>AUTHOR</h2>
+            <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta assumenda commodi repellat possimus, accusantium esse totam. In optio accusamus totam aspernatur, iste nisi doloremque fugiat odit quam esse atque eius.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
