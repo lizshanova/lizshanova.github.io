@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user_input = prompt('Введите имя персонажа, и мы проверим, подходит ли оно вам:');
+        if (user_input.length > 10) {
+            alert('Оно слишком длинное, попробуйте ввести меньше символов')
+        } else if (user_input.length < 3) {
+            alert('Оно слишком короткое, попробуйте ввести больше символов')
+        } else if (user_input.length > 3 && user_input.length < 7) {
+            alert(user_input + ' это имя вам идеально подходит')
+        } else if (user_input.length === 0) {
+            alert('Вы не ввели имя!')
+        } 
+    </script>
+</body>
+</html>
