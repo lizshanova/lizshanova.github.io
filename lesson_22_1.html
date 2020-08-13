@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let riddle = 'Чем можно поделиться только один раз?'
+        let answer = 'секретом'
+
+        let user_input = prompt('Попробуй отгадать загадку - ' + riddle).toLowerCase()
+
+        if (user_input !== answer) {
+            alert('Ответ неверный, попробуй ещё раз...')
+        } else if (user_input == answer) {
+            alert(user_input + ' это правильный ответ! Молодец!')
+        }
+    </script>
+</body>
+</html>
