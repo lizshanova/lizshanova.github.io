@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let howMany = function (people, pizza) {
+            let peopleNumber = ''
+            let pizzaNumber = ''
+            for (let i = 0; i < people; i++) {
+                peopleNumber += '😄'
+            }
+            for (let i = 0; i < pizza; i++) {
+                pizzaNumber += '🍕'
+            }
+            return [peopleNumber, pizzaNumber]
+        }
+
+        let userInputPeople = Number(prompt('Сколько будет человек: '))
+        let userInputPizza = Number(prompt('Сколько будет пицц: '))
+
+        let people = howMany(userInputPeople, userInputPizza)[0]
+        let pizza = howMany(userInputPeople, userInputPizza)[1]
+
+        alert('Будет людей - ' + people + ' и пицц - ' + pizza)
+    </script>
+</body>
+</html>
