@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- CSS only -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        span, .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 2em;
+        }
+        span {
+            font-size: 4em;
+            font-weight: 300;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .button {
+            color: white;
+            background-color: teal;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-success mb-2" id="navbar">
+        <span class="navbar-brand mb-5 text-light">Hangman game</span>
+    </nav>
+    <div class="container">
+        <span>Привет, я загадал слово, состоящее из 6 букв. Попробуй угадай!</span>
+        <form action="">
+            <input type="text" name="q" id="">
+            <button type="submit"><h2>Enter</h2></button>
+        </form>
+    </div>
+    <div class="game">
+        <div class="answer">_ _ _ _ _ _</div>
+    </div>
+    <script>
+        let userInput = document.querySelector('#');
+        
+        let words = ['машина', 'дерево', 'здание'];
+
+        let word = words[Math.floor(Math.random() * words.length)];
+
+        let template = [];
+
+        for (let i = 0; i < word.length; i++) {
+            template.push('_');
+        }
+
+        let remainLetters = word.length
+
+        while (remainLetters > 0) {
+            alert(template.join(' '))
+            let user_input = prompt('Введите букву')
+
+            if (user_input === null) {
+                break
+            } else if (user_input.length > 1) {
+                user_input = prompt('Введите не более 1 буквы')
+            } else {
+                for (let i = 0; i < word.length; i++) {
+                    let tmp = word[i];
+                    if (tmp == user_input) {
+                        template[i] = user_input
+                        remainLetters--
+                    }
+                }
+            }
+        }
+        alert('Поздравляем с победой!');
+    </script>
+</body>
+</html>

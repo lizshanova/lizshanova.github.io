@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        span {
+            color: black;
+            font-size: 4.5em;
+            transition: text-shadow ease .2s;
+            transition: border-bottom ease .2s;
+            cursor: pointer; 
+        }
+        span:hover {
+            text-shadow: 
+            1px 1px 0 black,
+            2px 2px 0 black,
+            3px 3px 0 black,
+            4px 4px 0 black,
+            5px 5px 0 black,
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span>H</span>
+        <span>E</span>
+        <span>L</span>
+        <span>L</span>
+        <span>O</span>
+    </h1>
+    <script>
+        let body = document.querySelector('body');
+        let hello = document.querySelectorAll('span');
+
+        body.addEventListener('mousemove', color);
+        for (let i = 0; i < hello.length; i++) {
+            const el = hello[i];
+            el.addEventListener('click', direction);
+        }
+
+        function color(event) {
+            let height = window.innerHeight;
+            let width = window.innerWidth;
+            let posX = event.clientX / (width / 225);
+            let posY = event.clientY / (height / 225);
+            for (let i = 0; i < hello.length; i++) {
+                const el = hello[i];
+                el.style.color = 'rgb(' + posX + ',' + posY + ',' + ', 40)';
+            }
+        }
+        
+        function direction(event) {
+            let el = event.target;
+            let clicked = el.style.borderBottom
+            if (!clicked) {
+                el.style.borderBottom = '15 px solid red';
+            } else {
+                el.style.borderBottom = '';
+            }
+        }
+    </script>
+</body>
+</html>

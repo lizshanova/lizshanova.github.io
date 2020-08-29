@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let body = document.querySelector('body')
+        body.addEventListener('mousemove', color)
+
+        function color(event) {
+            let height = window.innerHeight;
+            let width = window.innerWidth;
+            let posX = event.clientX / (width / 255);
+            let posY = event.clientY / (height / 255);
+
+            body.style.backgroundColor = 'rgb(' + posX + ',' + posY + ', 40)';
+        }
+    </script>
+</body>
+</html>

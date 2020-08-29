@@ -41,16 +41,16 @@
     <div class="box3">Click me!</div>
     <div class="box4">Click me!</div>
     <script>
-        let containers = document.getElementByTagName('box');
+        let containers = document.getElementsByTagName('div');
 
-        function click(event) {
+        function clickEvent(event) {
             event.target.textContent = 'Dont click anymore!';
             event.target.style.backgroundColor = 'lightsalmon'
         }
 
         for (let i = 0; i < containers.length; i++) {
             let element = containers[i];
-            element.addEventListener('click', click);
+            element.addEventListener('click', clickEvent);
         }
     </script>
 </body>
