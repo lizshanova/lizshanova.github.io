@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #parallax {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(1, 1, 78);
+        }
+        h1 {
+            color: white;
+            font-size: 3.5em;
+        }
+        span {
+            position: relative;
+        }
+        #line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 15px;
+            background-color: khaki;
+        }
+        #bottom {
+            height: 150vh;
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="parallax">
+        <h1 id="content">
+            <span id="text">Text</span>
+            <span id="textParallax">Parallax</span>
+        </h1>
+        <div id="line"></div>
+    </div>
+    <div id="bottom"></div>
+    <script>
+        let text = document.querySelector('#text');
+        let textParallax = document.querySelector('#textParallax');
+        let line = document.querySelector('#line');
+
+        window.addEventListener('scroll', scrollEvent);
+
+        function scrollEvent(event) {
+            let scrollDown = window.scrollY;
+
+            text.style.top = scrollDown 
+            textParallax.style.top = -scrollDown
+
+            line.style.left = 
+        }
+    </script>
+</body>
+</html>

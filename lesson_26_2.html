@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            cursor: none;
+            background-color: bisque;
+        }
+        #cursor {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+    <script>
+        let body = document.querySelector('body');
+        let cursor = document.querySelector('#cursor');
+
+        document.addEventListener('mousemove', moveEvent);
+        document.addEventListener('click', clickEvent);
+
+        function moveEvent(event) {
+            
+        }
+        function clickEvent(event) {
+            
+        }
+    </script>
+</body>
+</html>

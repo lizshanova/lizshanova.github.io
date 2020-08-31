@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: red;
+        }
+        #container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            background-color: royalblue;
+            height: 600px;
+            width: 600px;
+        }
+        #score {
+            text-align: center;
+            background-color: white;
+            width: 50%;
+        }
+        #button {
+            text-align: center;
+            cursor: pointer;
+            color: white;
+            background-color: palevioletred;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="score">
+            <h2>
+                score:  <span id="number">0</span>
+            </h2>
+        </div>
+        <div id="button">
+            <h1>
+                Click on me:  <span id="times">40</span>  times!
+            </h1>
+        </div>
+    </div>
+    <script>
+        let body = document.querySelector('body');
+        let container = document.querySelector('#container');
+        let score = document.querySelector('#number');
+        let button = document.querySelector('#button');
+        let buttonCount = document.querySelector('#times')
+        let countScore = 0;
+        let backgroundColors = ['red', '#ff3b00', '#f80', '#ffb700', '#fff700', '#bf0', '#62ff00'];
+        let length = backgroundColors.length * 5 + 5;
+
+        buttonCount.textContent = length;
+
+        button.addEventListener('click', clickEvent);
+
+        function clickEvent(event) {
+            countScore++
+            length--
+            if (length < 0) {
+                finish()
+            }
+            buttonCount.textContent = length;
+            score.textContent = countScore;
+            if (countScore == 30 || 25 || 20 || 15 || 10 || 5) {
+                changeBackgroundColor()
+            } 
+        }
+        function changeBackgroundColor() {
+            let backgroundColor = backgroundColors.pop();
+            body.style.backgroundColor = backgroundColor;
+        }
+        function finish() {
+            body.remove();
+            let end = document.createElement('div');
+            end.textContent = 'Congratulations! You have won the game! Your final score: 40'
+        }
+    </script>
+</body>
+</html>
