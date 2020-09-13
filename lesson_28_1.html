@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+            background-color: slateblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        #modal {
+            position: fixed;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: purple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.5;
+        }
+        button {
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 1.5em;
+            border-radius: 30px;
+            border: 0;
+        }
+        button#first {
+            background-color: palegreen;
+        }
+        button#second {
+            background-color: palevioletred;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti pariatur molestias atque! Laboriosam eum voluptas quam dolore mollitia id sit magni aut veniam, aliquid, rem quos corrupti enim tenetur quod.
+    </h1>
+    <button id="first">ADD MODAL</button>
+    <script>
+        let body = document.querySelector('body');
+        let modal = document.querySelector('#modal');
+        let firstButton = document.querySelector('#first');
+        let secondButton = document.querySelector('#second');
+
+        secondButton.addEventListener('click', secondEvent);
+        firstButton.addEventListener('click', firstEvent);
+
+        function secondEvent(event) {
+            modal.remove();
+        }
+        function firstEvent(event) {
+            body.append(modal);
+        }
+    </script>
+</body>
+</html>
