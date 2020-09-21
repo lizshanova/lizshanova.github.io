@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            background-color: yellow;
+            padding: 1.5em;
+            border: yellow;
+            cursor: pointer;
+            border-radius: 50px;
+            font-size: 2em;
+        }
+        button:active {
+            background-color: seagreen;
+        }
+
+        span {
+            position: absolute;
+            background-image: url(heart.png);
+            background-size: cover;
+            pointer-events: none;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, -50%);
+            animation: hearts 1.5s linear infinite;
+        }
+
+        @keyframes hearts {
+            0% {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -100%);
+                opacity: 0;
+            }
+        }
+        button.clickMe {
+           animation: clickMe 1s linear infinite;
+        }
+        @keyframes clickMe {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="basic">Activate me!</button>
+    <script>
+        let button = document.querySelector('button');
+        let status = false;
+
+        button.addEventListener('click', clickEvent);
+
+        let setInt = setInterval(clickMe, 2000);
+        let removeInt = setInterval(removeClickMe, 3000);
+
+        function clickEvent(event) {
+            if (!status) {
+                status = true;
+                activated(status);
+            } else {
+                status = false;
+                activated(status);
+            }
+        }
+        function activated(status) {
+            if (status) {
+                document.addEventListener('mousemove', mouseEvent);
+                button.style.backgroundColor = 'seagreen';
+                button.className = '';
+                clearInterval(setInt);
+                clearInterval(removeInt);
+            } else {
+                document.removeEventListener('mousemove', mouseEvent);
+                button.style.backgroundColor = 'yellow';
+                setInt = setInterval(clickMe, 2000);
+                removeInt = setInterval(removeClickMe, 3000);
+            }
+        }
+        function mouseEvent(event) {
+            let body = document.querySelector('body');
+            let heart = document.createElement('span');
+            let x = event.clientX;
+            let y = event.clientY;
+
+            heart.style.left = x + 'px';
+            heart.style.top = y + 'px';
+            
+            let size = Math.random() * 100;
+            heart.style.width = size + 'px';
+            heart.style.height = size + 'px';
+
+            body.appendChild(heart);
+
+            setTimeout(removeHeart, 1800, heart)
+        }
+        function removeHeart(heart) {
+            heart.remove();
+        } 
+        function clickMe() {
+            button.className = 'clickMe';
+        }
+        function removeClickMe() {
+            button.className = '';
+        }
+    </script>
+</body>
+</html>
